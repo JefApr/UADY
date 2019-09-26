@@ -1,0 +1,143 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Documento sin título</title>
+
+	<style>
+		#menu {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#menu li a {
+			display: block;
+			width: 123px;
+			margin-bottom: 10px;
+			margin-left: 5px;
+			height: 34px;
+		}
+
+		#menu li a#inicio {
+			background-image: url(imagenes/inicio_s.jpg);
+		}
+
+		#menu li a#inicio:hover {
+			background-image: url(imagenes/inicio.jpg);
+		}
+
+		#menu li a#catalogo {
+			background-image: url(imagenes/catalogo_s.jpg);
+		}
+
+		#menu li a#catalogo:hover {
+			background-image: url(imagenes/catalogo.jpg);
+		}
+
+		#menu li a#organizacion {
+			background-image: url(imagenes/organizacion_s.jpg);
+		}
+
+		#menu li a#organizacion:hover {
+			background-image: url(imagenes/organizacion.jpg);
+		}
+
+		#menu li a .ocultar {
+			visibility: hidden;
+		}
+
+		#productos,
+		.comentario {
+			border-color: green;
+			border-style: solid;
+			border-width: 1px;
+		}
+
+		@media print{
+			form{
+				visibility: hidden;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<p><img src="imagenes/titulo_pagina.jpg" width="564" height="112" /></p>
+	<ul id="menu">
+		<li>
+			<a id="inicio" href="#"><span class="ocultar">Inicio</span></a>
+		</li>
+		<li>
+			<a id="catalogo" href="#"><span class="ocultar">Catálogo</span></a>
+		</li>
+		<li>
+			<a id="organizacion" href="#"><span class="ocultar">Organización</span></a>
+		</li>
+	</ul>
+	<table id="productos">
+		<tr>
+			<th>Producto</th>
+			<th>Descripción</th>
+			<td>Precio</td>
+		</tr>
+		<tr>
+			<td>0456</td>
+			<td>
+				Juego de sala provenzal en color castaño claro con cojines color beige
+			</td>
+			<td>$25,000</td>
+		</tr>
+		<tr>
+			<td>2531</td>
+			<td>
+				Comedor con seis sillas para exteriores en acero inoxidable color
+				rojo, incluye sombrilla marinera
+			</td>
+			<td>$14,560</td>
+		</tr>
+		<tr>
+			<td>3472</td>
+			<td>
+				Juego de 5 maceteros de terracota de 20, 30, 40, 50 y 60 cm de
+				diametro
+			</td>
+			<td>$3,000</td>
+		</tr>
+	</table>
+
+	<p>
+		Para más informes puede usted contactarnos via
+		<a href="mailto:correo@correo.web">correo electrónico</a> o bien
+		visitandonos en la siguiente dirección:
+	</p>
+	<p>
+		Calle 56 x 57 #402 Col. Centro<br />
+		Teléfono: 9999567840
+	</p>
+	<p>También puede llenar este formulario para sus comentarios:<br /></p>
+
+	<form action="comentarios.php" method="GET">
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td><input type="text" class="comentario" name="nombre" /></td>
+			</tr>
+			<tr>
+				<td>Correo</td>
+				<td><input type="text" class="comentario" name="correo"/></td>
+			</tr>
+			<tr>
+				<td>Comentario</td>
+				<td>
+					<textarea class="comentario" cols="40" rows="3" name="comentario"></textarea>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+	</form>
+</body>
+
+</html>

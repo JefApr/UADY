@@ -1,0 +1,21 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 5% 20%;
+  }
+  
+  .grid-container > div {
+    box-shadow:  5px 5px 10px grey;
+  }
+  
+  .item6 {
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  img{
+      width: 100%;
+      height: 100px;
+  }

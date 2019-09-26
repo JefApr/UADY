@@ -1,0 +1,20 @@
+
+.divTableCell{ 
+    width:30%;
+    border: 1px solid red; 
+    float: left;
+}
+
+
+.divTableCell2{ 
+    width:60%;
+    border: 1px solid blue; 
+    float: left;
+}
+
+.divTableCell3{ 
+    height: 100%;
+    width: 30%;
+    border: 1px solid gold; 
+    float: left;
+}

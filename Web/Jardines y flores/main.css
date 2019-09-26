@@ -1,0 +1,219 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("images/fondo.jpg");
+}
+
+header{
+  width: 100%;
+  background: #FCEFFF;
+  opacity: .80;
+  position: fixed;
+}
+
+
+article {
+  padding: 130px 0 130px 0;
+  text-align: center;
+}
+
+
+aside {
+opacity: .85;
+background: #44AE7F;
+float: left;
+width: 20%;
+height: 95%;
+}
+
+
+footer {
+opacity: .80;
+background:#544563;
+height: 5%;
+width: 100%;
+}
+
+footer img {
+width: 20%;
+}
+
+img{
+    height: 100%;
+}
+
+a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+  color: #454246;
+  font-weight: 700;
+}
+
+a:hover{
+    color:#06A85C;
+}
+
+.menu a{
+    font-size: 15px;
+}
+
+.sm-show{
+  height: 0px;
+  visibility: hidden;
+}
+
+.catalogo{
+  padding-top: 110px;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+  color: #454246;
+  font-weight: 400;
+}
+
+.search{
+  background-image: url("images/lupa.png");
+  background-repeat: no-repeat;
+  background-position-x: 3px;
+  background-position-y: 2px;
+  padding-left: 20px;
+  background-size: 14px 14px;
+  width: 100%;
+  margin-left: 20px;
+  border-radius: 40px;
+}
+
+.catalogo tr:nth-child(odd) {
+    background-color:#CCE8DC;
+}
+.catalogo tr:nth-child(even) {
+    background-color:#E9F4EF;
+}
+
+.catalogo-titulo{
+  font-weight: 700;
+  color: #327F5D;
+}
+
+.comentario{
+  margin-top: 30px;
+  width: 30%;
+  margin-bottom: 30px;
+  background: #F8F7F8;
+  
+}
+
+.comentario th{
+  background-image: url("images/comentario-head.jpg");
+  color:#E7E7E9;
+  font-size: 32px;
+  padding: 20px;
+}
+
+.comentario td{
+  padding:  15px 30px 15px 30px;
+}
+
+.comentario .text{
+  width: 100%;
+  background: #F8F7F8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 5px 20px 5px 20px;
+  border: 2px solid #327F5D;
+  border-radius: 30px;
+}
+
+.comentario .btn{
+  color: #331E59;
+  background: #F8F7F8;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10;
+  border: 2px solid #331E59;
+  border-radius: 60px;
+}
+
+.comentario .btn:hover{
+  color: #F8F7F8;
+  background: #331E59;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10;
+  border: 2px solid #331E59;
+  border-radius: 60px;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+@media (max-width: 700px){
+
+  .sm-hide{
+    visibility: hidden;
+    height: 0px;
+  }
+
+  .sm-show{
+    height: 20%;
+    visibility: visible;
+  }
+  
+  a{
+    display: block;
+    background: #CCE8DC;
+    margin: 10px;
+  }
+
+  header img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  footer img{
+    width: 100%;
+  }
+
+  article{
+    padding: 0;
+    margin: 0;
+  }
+
+  section{
+    background: #F8F7F8;
+  }
+}

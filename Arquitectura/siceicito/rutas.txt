@@ -1,0 +1,3 @@
+C:\Users\jefAp\Documents\alumnos.csv
+C:\Users\jefAp\Documents\maestros1.csv
+C:\asignaturas.csv

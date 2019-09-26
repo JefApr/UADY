@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+#barra {
+	background-color: #A8D7EA;
+	height: 10px;
+}
+
+#contenido {
+}
+
+#columna1 {
+	border-right-color: #ACDDF1;
+}
+
+#columna2 {
+}
+
+p.titulo {
+	color: #004A99;
+	border-top-color: #E8F5F5;
+	border-bottom-color: #E8F5F5;
+}

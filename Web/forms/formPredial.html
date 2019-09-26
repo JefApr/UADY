@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Predial</title>
+</head>
+<body>
+    <form method="get" action="guardar.php">
+    <table width="100%" cellpadging="0" cellspacing="0" align="center">
+        
+        <tr>
+            <td align="center">
+                <h1>Consulta y pago de predial</h1>
+            </td>
+        </tr>
+            <td align="center">
+                <font color="blue"> Consulta tu predio por:</font>
+                <label><input type="radio" name="rbtnOpciones" id="rbtnDir" checked>Direcci&oacuten</label>
+                <label><input type="radio" name="rbtnOpciones" id="rbtnSecc">Secci&oacuten y manzana</label>
+                <label><input type="radio" name="rbtnOpciones" id="rbtnTabl">Tablaje</label>
+                <label><input type="radio" name="rbtnOpciones" id="rbtnFolio">Folio</label>
+            </td>
+        <tr>
+            <td align="center">
+                <input type="text" name="calle" placeholder="Calle">
+                <input type="text" name="letra1" placeholder="Letra">
+                <input type="number" name="numero" placeholder="N&uacute;mero">
+                <input type="text" name="letra2" placeholder="Letra">
+                <input type="submit" value="Buscar predio">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

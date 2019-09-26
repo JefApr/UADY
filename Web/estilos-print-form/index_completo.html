@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+
+<style>
+
+ul#menu {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+ul#menu li {
+	margin:10px;
+}
+
+ul#menu li a span {
+	visibility:hidden
+}
+
+ul#menu li a {
+	display:block;
+	width:123px;
+	height:34px;
+}
+
+ul#menu li a#inicio {
+	background-image:url(imagenes/inicio_s.jpg)
+}
+
+ul#menu li a#inicio:hover {
+	background-image:url(imagenes/inicio.jpg)
+}
+
+ul#menu li a#catalogo {
+	background-image:url(imagenes/catalogo_s.jpg)
+}
+
+ul#menu li a#catalogo:hover {
+	background-image:url(imagenes/catalogo.jpg)
+}
+
+ul#menu li a#organizacion {
+	background-image:url(imagenes/organizacion_s.jpg)
+}
+
+ul#menu li a#organizacion:hover {
+	background-image:url(imagenes/organizacion.jpg)
+}
+
+#productos, input, textarea{
+	border-color:#6C0;
+	border-style:solid;
+	border-width:1px;
+}
+
+.pantalla {
+	visibility:visible;
+}
+
+.impresion {
+	visibility:hidden;
+}
+
+.marca {
+	visibility:hidden;
+	z-index:-1;
+	top:0px;
+	left:100px;
+	position:fixed
+}
+
+</style>
+
+<style media="print">
+
+.pantalla {
+	visibility:hidden;
+}
+
+.impresion {
+	visibility:visible;
+}
+
+.salto {
+	page-break-after:always;
+}
+
+.marca {
+	visibility:visible;
+	z-index:-1;
+	top:300px;
+	left:0px;
+	position:fixed
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="marca"><img src="imagenes/copia.jpg" width="600" height="350" /></div>
+<p><img class="pantalla" src="imagenes/titulo_pagina.jpg" width="564" height="112" /><img class="impresion" src="imagenes/titulo_impresion.jpg" width="250" height="48" /></p>
+<ul id="menu" class="pantalla">
+  <li><a id="inicio" href="#"><span>Inicio</span></a></li>
+  <li><a id="catalogo" href="#"><span>Catálogo</span></a></li>
+  <li><a id="organizacion" href="#"><span>Organización</span></a></li>
+</ul>
+<p class="salto">&nbsp;</p>
+<table id="productos">
+  <tr>
+    <th>Producto</th>
+    <th>Descripción</th>
+    <td>Precio</td>
+  </tr>
+  <tr>
+    <td>0456</td>
+    <td>Juego de sala provenzal en color castaño claro con cojines color beige</td>
+    <td>$25,000</td>
+  </tr>
+  <tr>
+    <td>2531</td>
+    <td>Comedor con seis sillas para exteriores en acero inoxidable color rojo, incluye sombrilla marinera</td>
+    <td>$14,560</td>
+  </tr>
+  <tr>
+    <td>3472</td>
+    <td>Juego de 5 maceteros de terracota de 20, 30, 40, 50 y 60 cm de diametro</td>
+    <td>$3,000</td>
+  </tr>
+</table>
+<p>Para más informes puede usted contactarnos via <a href="mailto:correo@correo.web">correo electrónico</a> o bien visitándonos en la siguiente dirección:</p>
+<p>Calle 56 x 57 #402 Col. Centro<br />
+  Teléfono: 9999567840
+</p>
+<div class="pantalla">
+<p>También puede llenar este formulario para sus comentarios:</p>
+<form id="formulario" name="forma" method="post" action="">
+  <table>
+    <tr>
+      <td>Nombre:</td>
+      <td><input type="text" name="nombre" id="nombre" /></td>
+    </tr>
+    <tr>
+      <td>Correo:</td>
+      <td><input type="text" name="correo" id="correo" /></td>
+    </tr>
+    <tr>
+      <td>Comentario:</td>
+      <td><textarea name="comentario" id="comentario" cols="45" rows="5"></textarea></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>
