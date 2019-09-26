@@ -1,0 +1,3 @@
+C:\Jef\Repositorios\UADY\Arquitectura\siceicito\alumnos.xlsx
+C:\Jef\Repositorios\UADY\Arquitectura\siceicito\maestros.xlsx
+C:\Jef\Repositorios\UADY\Arquitectura\siceicito\asignaturas.xlsx
