@@ -44,12 +44,5 @@ public class Cliente implements Observer {
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-
-
-
-
-
-
-
     }
 }
