@@ -11,7 +11,6 @@ public class Tuberia {
 
     public void setStream(Object stream){
         sendStreamToFilter(stream);
-
     }
 
     public void sendStreamToFilter(Object stream){

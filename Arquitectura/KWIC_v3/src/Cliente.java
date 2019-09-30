@@ -1,4 +1,6 @@
-
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
 
 public class Cliente implements Observer {
     private Tuberia inicio;
@@ -19,7 +21,7 @@ public class Cliente implements Observer {
 
     @Override
     public void update(Object arg) {
-        System.out.println(arg.toString());
+        System.out.println(arg.toString()+"\n");
     }
 
     public static void main(String[] args){
@@ -32,7 +34,19 @@ public class Cliente implements Observer {
         Cliente cliente= new Cliente(tuberia1, tuberia5);
         ((Output) cliente.getFin().getSigFiltro()).addObserver(cliente);
 
-        cliente.inicio.setStream(null);
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader("sentencias.txt");
+            Scanner scanner= new Scanner(fileReader);
+            while(scanner.hasNext()){
+                cliente.inicio.setStream(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
 
 
 

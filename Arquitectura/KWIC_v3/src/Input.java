@@ -8,7 +8,10 @@ public class Input extends Filtro {
 
     @Override
     protected Object doIt(Object arg) {
-        return new Scanner(System.in).nextLine();
+        if(arg!=null)
+            return arg;
+        else
+            return new Scanner(System.in).nextLine();
     }
 
 }
