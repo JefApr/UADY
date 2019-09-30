@@ -9,9 +9,11 @@ header{
   width: 100%;
   background: #FCEFFF;
   opacity: .80;
-  position: fixed;
 }
 
+.flotante{
+  position: fixed;
+}
 
 article {
   padding: 130px 0 130px 0;

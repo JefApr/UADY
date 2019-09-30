@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="validate.js"></script>
+    <title>Validate</title>
+</head>
+
+<body>
+    <form class="myForm">
+
+        <label for="text">Texto </label>
+        <div class="tooltip">
+            <input type="text" onfocus="this.select(); hideTooltip(this.id)"
+                onkeypress="validateKey(event, new RegExp('^[A-Z]+$', 'i'))" placeholder="Solo texto" id="text">
+            <span class="tooltiptext" id="tooltip_text">El campo no debe estar vacío</span>
+        </div>
+
+        <label for="number">Número </label>
+        <div class="tooltip">
+            <input type="text" onfocus="this.select(); hideTooltip(this.id)"
+                onkeypress="validateKey(event, new RegExp('^[0-9]+$'))" placeholder="Solo números" id="number">
+            <span class="tooltiptext" id="tooltip_number">El campo no debe estar vacío</span>
+        </div>
+
+        <input type="button" value="ENVIAR" onclick="validate()">
+
+    </form>
+</body>
+
+</html>
