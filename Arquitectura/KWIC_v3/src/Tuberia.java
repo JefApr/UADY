@@ -1,7 +1,11 @@
-public class Tuberia {
+import java.util.ArrayList;
+
+public class Tuberia implements  Observable{
     private Filtro sigFiltro;
+    private ArrayList<Observer> observers;
 
     public Tuberia(Filtro sigFiltro) {
+        observers= new ArrayList();
         this.sigFiltro = sigFiltro;
     }
 
@@ -9,12 +13,24 @@ public class Tuberia {
         return sigFiltro;
     }
 
-    public void setStream(Object stream){
-        sendStreamToFilter(stream);
+    public void sendStreamToFilter(Object stream){
+        if(sigFiltro!=null)
+            sigFiltro.recibirStream(stream);
+        else
+            notifyObservers(stream);
     }
 
-    public void sendStreamToFilter(Object stream){
-        sigFiltro.recibirStream(stream);
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyObservers(Object arg) {
+        for(Observer observer : observers) {
+            observer.update(arg);
+        }
     }
 
 }

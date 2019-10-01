@@ -3,10 +3,6 @@ import java.util.LinkedList;
 
 public class Mezclar extends Filtro {
 
-    public Mezclar(Tuberia tuberiaSalida){
-        super(tuberiaSalida);
-    }
-
     @Override
     public Object doIt(Object arg) {
 

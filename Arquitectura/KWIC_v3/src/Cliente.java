@@ -26,20 +26,32 @@ public class Cliente implements Observer {
 
     public static void main(String[] args){
 
-        Tuberia tuberia5 = new Tuberia(new Output(null));
-        Tuberia tuberia4 = new Tuberia(new Ordenar(tuberia5));
-        Tuberia tuberia3 = new Tuberia(new Mezclar(tuberia4));
-        Tuberia tuberia2= new Tuberia(new Partir(tuberia3));
-        Tuberia tuberia1= new Tuberia(new Input(tuberia2));
-        Cliente cliente= new Cliente(tuberia1, tuberia5);
-        ((Output) cliente.getFin().getSigFiltro()).addObserver(cliente);
+        Input input = new Input();
+        Partir partir = new Partir();
+        Mezclar mezclar= new Mezclar();
+        Ordenar ordenar= new Ordenar();
+        Output output= new Output();
+        Tuberia tuberiaInicio= new Tuberia(input);
+        Tuberia tuberia2= new Tuberia(partir);
+        Tuberia tuberia3 = new Tuberia(mezclar);
+        Tuberia tuberia4 = new Tuberia(ordenar);
+        Tuberia tuberia5 = new Tuberia(output);
+        Tuberia tuberiaFin = new Tuberia(null);
+        input.setTuberiaSalida(tuberia2);
+        partir.setTuberiaSalida(tuberia3);
+        mezclar.setTuberiaSalida(tuberia4);
+        ordenar.setTuberiaSalida(tuberia5);
+        output.setTuberiaSalida(tuberiaFin);
+
+        Cliente cliente= new Cliente(tuberiaInicio,tuberiaFin);
+        cliente.getFin().addObserver(cliente);
 
         FileReader fileReader = null;
         try {
             fileReader = new FileReader("sentencias.txt");
             Scanner scanner= new Scanner(fileReader);
             while(scanner.hasNext()){
-                cliente.inicio.setStream(scanner.nextLine());
+                cliente.inicio.sendStreamToFilter(scanner.nextLine());
             }
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());

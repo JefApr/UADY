@@ -2,14 +2,7 @@
 
 import java.util.ArrayList;
 
-public class Output extends Filtro implements Observable {
-
-    private ArrayList<Observer> observers;
-
-    public Output(Tuberia tuberiaSalida){
-        super(tuberiaSalida);
-        observers= new ArrayList();
-    }
+public class Output extends Filtro {
 
     @Override
     public Object doIt(Object arg) {
@@ -19,19 +12,8 @@ public class Output extends Filtro implements Observable {
         for (String frase : frases)
             impresion+=frase+"\n";
 
-        notifyObservers(impresion);
         return impresion;
     }
 
-    @Override
-    public void addObserver(Observer observer) {
-        observers.add(observer);
-    }
 
-    @Override
-    public void notifyObservers(Object arg) {
-        for(Observer observer : observers) {
-            observer.update(arg);
-        }
-    }
 }

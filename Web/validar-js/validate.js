@@ -9,15 +9,21 @@ function validateKey(evt, regex){
     }
 }
 
+
+
 function validate(){
+    var flag=true;
     txtText= document.getElementById("text");
     txtNumber= document.getElementById("number");
     if(txtText.value==""){
         showTooltip(txtText.id);
+        flag=false;
     }
     if(txtNumber.value==""){
         showTooltip(txtNumber.id);
+        flag=false;
     }
+    return flag;
 }
 
 function showTooltip(element_id){

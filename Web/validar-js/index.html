@@ -9,23 +9,23 @@
 </head>
 
 <body>
-    <form class="myForm">
+    <form class="myForm" method="GET" action="http://www.google.com" onsubmit="return validate()">
 
         <label for="text">Texto </label>
         <div class="tooltip">
-            <input type="text" onfocus="this.select(); hideTooltip(this.id)"
+            <input name="name" type="text" onfocus="this.select(); hideTooltip(this.id)"
                 onkeypress="validateKey(event, new RegExp('^[A-Z]+$', 'i'))" placeholder="Solo texto" id="text">
             <span class="tooltiptext" id="tooltip_text">El campo no debe estar vacío</span>
         </div>
 
         <label for="number">Número </label>
         <div class="tooltip">
-            <input type="text" onfocus="this.select(); hideTooltip(this.id)"
+            <input name="number" type="text" onfocus="this.select(); hideTooltip(this.id)"
                 onkeypress="validateKey(event, new RegExp('^[0-9]+$'))" placeholder="Solo números" id="number">
             <span class="tooltiptext" id="tooltip_number">El campo no debe estar vacío</span>
         </div>
 
-        <input type="button" value="ENVIAR" onclick="validate()">
+        <input type="submit"  value="ENVIAR" >
 
     </form>
 </body>

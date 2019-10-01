@@ -1,8 +1,11 @@
 public abstract class Filtro {
     private Tuberia tuberiaSalida;
 
-    public Filtro(Tuberia tuberiaSalida){
-        this.tuberiaSalida= tuberiaSalida;
+    public Filtro(){
+    }
+
+    public void setTuberiaSalida(Tuberia tuberiaSalida) {
+        this.tuberiaSalida = tuberiaSalida;
     }
 
     public void recibirStream(Object stream){
@@ -13,9 +16,7 @@ public abstract class Filtro {
     protected abstract Object doIt(Object stream);
 
     protected void sendResultToNextPipe(Object stream){
-        if(tuberiaSalida!=null){
-            tuberiaSalida.setStream(stream);
-        }
+            tuberiaSalida.sendStreamToFilter(stream);
     }
 
 }
