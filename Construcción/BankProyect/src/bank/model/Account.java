@@ -5,55 +5,51 @@
  */
 package bank.model;
 
-public class Account{                           
-    public static final String  CREDIT= "CREDIT";
+public class Account {
+    public static final String CREDIT = "CREDIT";
     public static final String DEBIT = "DEBIT";
-    
+
     private static int IDkey;
     private int IDaccount;
-    private double balance; 
+    private double balance;
     private String typeAccount;
-    
-    public Account (String typeAccount, double balance) {               
-        this.IDaccount =IDkey;
+
+    public Account(String typeAccount, double balance) {
+        this.IDaccount = IDkey;
         IDkey++;
         this.typeAccount = typeAccount;
         this.balance = balance;
     }
-    
-    /*public Account (double balance) {               
-        this.IDaccount =IDkey;
-        IDkey++;
-        this.balance = balance;
-    }
-    */
-    public double withdraw(double ammount){
-        if(balance>=ammount){
+
+    /*
+     * public Account (double balance) { this.IDaccount =IDkey; IDkey++;
+     * this.balance = balance; }
+     */
+    public double withdraw(double ammount) {
+        if (balance >= ammount) {
             balance = balance - ammount;
         }
         return balance;
     }
-    
-    public double deposit(double ammount){
-        
+
+    public double deposit(double ammount) {
+
         return balance;
     }
-    
-    public void setBalance (double balance){
+
+    public void setBalance(double balance) {
         this.balance = balance;
     }
-    
-    public double getBalance (){
+
+    public double getBalance() {
         return balance;
     }
-    
-    public int getIDAccount(){
+
+    public int getIDAccount() {
         return this.IDaccount;
     }
-    
-    public String toString(){
-        return "ID Account: " +IDaccount +
-               ", Type: " + typeAccount+
-               " ,Balance: " + balance;
+
+    public String toString() {
+        return "ID Account: " + IDaccount + ", Type: " + typeAccount + " ,Balance: " + balance;
     }
 }

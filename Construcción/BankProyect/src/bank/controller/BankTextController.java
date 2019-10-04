@@ -12,9 +12,8 @@ import java.util.Hashtable;
 
 public class BankTextController {
     
-    
     public String[][] getTable(String Filename){
-        int i,j;
+        
         BankTextReader bankBuilder = new BankTextReader();
         ArrayList<String> input;
         input = bankBuilder.bankReader(Filename);
@@ -22,16 +21,17 @@ public class BankTextController {
         String array;
         String accounts;
         String[] split;
-        for(i=0;i<input.size();i++){
+
+        for(int i=0; i<input.size(); i++){
             array = input.get(i);
             split = array.split(",");
             accounts = split[3];
-            for(j=6;j<split.length;j++){
+            for(int j=6; j<split.length; j++){
                 accounts = accounts + ", " + split[j];
                 j = j + 2;
             }
             output[i][3] = accounts;
-            for(j=0;j<3;j++){
+            for(int j=0;j<3;j++){
                 output[i][j] = split[j];
             }
         }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+        <div class="lock-screen" id="lockScreen">
+            </div>
+            
+        <div class="alert error" id="error">
+                <div class="alert-header">
+                    <h2 class="alert-title">Algo salió mal...</h2>
+                </div>
+                <div class="alert-content">
+                    <p id="alertMessage" class="alert-message">Debe seleccionar algún perfil</p>
+                    <button onclick="hideError()">OK</button>
+                </div>
+            </div>
+        
+            <div class="alert success" id="success">
+                <div class="alert-header">
+                    <h2 class="alert-title">Buen trabajo...</h2>
+                </div>
+                <div class="alert-content">
+                    <p class="alert-message">Todo se validó correctamente</p>
+                    <button onclick="hideSuccess()">OK</button>
+                </div>
+            </div>
+
+    <form>
+        <h1>Registro</h1>
+
+        <input type="text" placeholder="Escribe tu nombre" name="name" id="name">
+        <p id="error-name" class="text-error">El nombre no debe estar vacío</p>
+
+        <input type="password" placeholder="Escribe tu contraseña" name="password" id="password">
+        <input type="password" placeholder="Repite tu contraseña" name="password2" id="password2">
+        <p id="error-password" class="text-error">Las contraseñas no coinciden</p>
+
+        <select name="perfil" id="perfil">
+            <option value="0">Selecciona un perfil</option>
+            <option value="1">Administrador</option>
+            <option value="2">Usuario</option>
+        </select>
+        <p id="error-perfil" class="text-error">Debe seleccionar un perfil</p>
+        <input type="button" onclick="validar()" value="REGISTRARSE">
+
+    </form>
+
+</body>
+</html>
+<script src="script.js"></script>

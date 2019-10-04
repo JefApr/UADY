@@ -1,0 +1,158 @@
+
+
+body{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-image: url("background.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 80%;
+
+}
+
+form{
+    background: white;
+    text-align: center;
+    width: 40%;
+    border-radius: 40px;
+    padding: 50px;
+     height: 100vh;
+}
+
+form input[type=text],input[type=password], select{
+    padding-left: 20px; 
+    font-size: 14pt;
+    width: 100%;
+    margin-top: 40px;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 0px;
+    border-bottom: solid 2px #30999F; 
+}
+
+form select{
+    color: #777777;
+}
+
+
+form h1{
+    color: #40606C;
+    margin-bottom: 10px;
+    font-size: 350%;
+}
+
+.text-error{
+    visibility: hidden;
+    font-size: 11pt;
+    color: #fb3838;
+    text-align: left;
+    margin-top: 0%;
+    border-width: 0px;
+    width: 100%;
+    padding-left: 20px;
+}
+
+
+
+.lock-screen{
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+    z-index: 1;
+    background: gray;  
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.alert{
+    padding: 15px;
+    margin: 10% 25% 5% 35%;
+    position: absolute;
+    border-radius: 20px;
+    display: inline-block;
+    opacity: 0;
+    z-index: 1;
+    background: white;  
+    visibility: hidden;
+    width: 30%;
+    transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+    transform-origin: center;
+    height: 40%;
+    text-align: center;
+}
+
+.alert-title{
+    font-size: 28px;
+color: #777777;
+font-weight: 500;
+}
+
+.alert-content{
+    font-size: 20px;
+color: #777777;
+font-weight: 100;
+}
+
+.alert-header{
+    background-size: 80px;
+    padding-top:80px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.error .alert-header{
+    background-image: url("error.png");
+}
+
+.success .alert-header{
+    background-image: url("success.png");
+}
+
+
+button, input[type=button]{
+    color: white;
+    border-radius: 5px;
+    padding: .625em 2em;
+    border-width: 0px;
+}
+
+
+form input[type=button]{
+    margin-top:30px;
+    width: 60%;
+    height: 40px;
+    font-size: 14pt;
+    background: #30999F;
+}
+
+.success button{
+    
+    background: #4CD58A;
+}
+.error button{
+    background: #fb3838;
+}
+
+.alert-hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+.alert-show {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  .lock-screen-show {
+    visibility: visible;
+    opacity: .3;
+  }
+
+  
+
+
+
+

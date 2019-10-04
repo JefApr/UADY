@@ -12,11 +12,6 @@ public class Main {
     
     public static void main(String[] ar){
         
-        
-        
-        /*Room [] roomsGround = new Room[5];
-        Room [] roomsFirst = new Room[5];
-        */
         Room living  = new Room("Living");
         Room kitchen = new Room("Kitchen");
         Room bathroom = new Room("Bathroom");
@@ -49,10 +44,8 @@ public class Main {
         bathroom1stf.addDevice(new Device("10","Luces","Alefco","lw100",true));
         
         
-        
         Level groundFloor = new Level("Ground Floor");
         Level firstFloor = new Level("First Floor");
-        
         
         groundFloor.addRoom(living);
         groundFloor.addRoom(kitchen);
@@ -63,34 +56,12 @@ public class Main {
         firstFloor.addRoom(bedroom2);
         firstFloor.addRoom(bathroom1stf);
         
-
         House myhouse = new House("MyHome");
         
         myhouse.addLevel(groundFloor);
         myhouse.addLevel(firstFloor);
         
-        System.out.println(myhouse);
-        
-        
-        /*
-        room.addDevice(new Device("Reynaldo", "LG", "123456", true));
-        room.addDevice(new Device("Andrea", "Nokia", "Lumia-520", true));
-        room.addDevice(new Device("Karina","Panasonic","465464", true));
-        room.addDevice(new Device("Martin", "ZTE", "V7",true));
-        room.addDevice(new Device("Antonio","Samsung","J5",true));
-        room.addDevice(new Device("Roberto","HP","SpectreX360",true));
-        room.addDevice(new Device("Gabriel","Linu","Ilium_S106",true));
-        room.addDevice(new Device ("Limberth","LG", "lg-206",true));
-        room.addDevice(new Device("jesus", "hp","2997", true));
-        room.addDevice(new Device("Rich", "Asus","Zenfone_4_Max",true));
-        room.addDevice(new Device("Adrian","Apple","SE",true));
-        room.addDevice(new Device ("Jonatan","samsung","J5",true));
-        room.addDevice(new Device("Jessica", "Huaweii", "P9LITE", true));
-        */
-        
-        
-        
-        
+        System.out.println(myhouse);        
         
     }
     
