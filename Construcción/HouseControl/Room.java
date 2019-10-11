@@ -56,6 +56,16 @@ public class Room {
         return devices.size();
     }
 
+    public int getDevicesOn(){
+        int devicesOn=0;
+        for(Device device : devices){
+            if (device.isStatus()) {
+                devicesOn++;
+            }
+        }
+        return devicesOn;
+    }
+
     public int searchDevice(Device otherDevice) {
         int index = 0;
         boolean flag = false;

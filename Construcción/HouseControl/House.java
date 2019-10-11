@@ -55,12 +55,7 @@ public class House {
             for (int j = 0; j < counterRooms; j++) {
                 ArrayList<Device> devices = rooms.get(j).getDevices();
                 int counterDevices = rooms.get(j).getDeviceCounter();
-                
-                for (int k = 0; k < counterDevices; k++) {
-                    if (devices.get(k).isStatus() == true) {
-                        devicesOn++;
-                    }
-                }
+                devicesOn+= rooms.get(i).getDevicesOn();
             }
         }
         return devicesOn;
