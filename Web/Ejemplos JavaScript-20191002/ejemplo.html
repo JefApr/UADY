@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function validar(p) {
+//                var texto = document.getElementById("texto1");
+//                if (texto.value === "") {
+//                    alert("Escribe algo...");
+//                } else {
+//                    alert(p.text1.value);
+//                    p.text2.focus();
+//                }
+                alert(p.value);
+                p.select();
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <form name="form" action="wwww.google.com" onsubmit="validar(this.text1);
+                return false;">
+            <input type="text" name="text1" id="texto1" onclick="this.select()">
+            <input type="text" name="text2">
+            <input type="submit" name="boton" value="Enviar" >
+        </form>
+
+    </body>
+</html>

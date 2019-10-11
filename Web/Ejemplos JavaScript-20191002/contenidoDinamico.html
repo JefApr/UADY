@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <script>
+      function escribirDocumento(cadena) {
+        document.open();
+        document.writeln(cadena);
+        document.close();
+      }
+
+      function escribirVentana(cadena) {
+        ventana = window.open("", "", "width=200 height=200 status=yes");
+        ventana.document.open();
+        ventana.document.writeln(cadena);
+        ventana.document.close();
+      }
+
+      function escribirTexto(objeto, cadena) {
+        objeto.innerText = cadena;
+      }
+
+      function escribirHTML(objeto, cadena) {
+        objeto.innerHTML = cadena;
+      }
+    </script>
+  </head>
+
+  <body>
+    <script>
+      escribirDocumento("<h1>Contenido generado</h1>");
+    </script>
+
+    <form name="forma">
+      <p>
+        Texto:<br /><textarea
+          cols="50"
+          rows="10"
+          scrollbar="both"
+          name="texto"
+        ></textarea>
+      </p>
+      <p>
+        <input
+          type="button"
+          name="boton1"
+          value="Ventana"
+          onclick="escribirVentana(texto.value)"
+        />
+        <input
+          type="button"
+          name="boton2"
+          value="Contenedor texto"
+          onclick="escribirTexto(document.getElementById('caja'),texto.value)"
+        />
+        <input
+          type="button"
+          name="boton3"
+          value="Contenedor HTML"
+          onclick="escribirHTML(document.getElementById('caja'),texto.value)"
+        />
+        <input type="button" name="boton4" value="Documento"
+        onclick="escribirDocumento (texto.value)"; ">
+      </p>
+    </form>
+  </body>
+
+  <div id="caja">
+    <script>
+      escribirDocumento("<b>Una capa</b>");
+    </script>
+  </div>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Compras de Productos</title>
+<link rel="stylesheet" href="estilos.css" type="text/css">
+<script language="JavaScript" src="codigo.js" type="text/javascript"></script>
+<script language="JavaScript" src="validacion.js" type="text/javascript"></script>
+</head>
+<body class="secundaria" onload="CambiarProducto(0);CrearMensaje('Ofertas','50% de descuento en Macetas Italianas')">
+<table class="barrasuperior">
+  <tr>
+    <td><a href="index.html"><img src="figuras/logotipo.gif" width="252" height="108" border="0" alt=""></a> Cat&aacute;logo de Productos</td>
+  </tr>
+</table>
+<form name="compras" action="" id="compras">
+  <table align="center">
+    <tr>
+      <td>Producto:</td>
+      <td valign="top"><select name="catalogo" size="1" onmouseover="Mensaje('Seleccione un producto');" onmouseout="Mensaje('');" onchange="CambiarProducto(catalogo.selectedIndex)">
+          <option value="1">An&eacute;mona</option>
+          <option value="2">Jacinto</option>
+          <option value="3">Clematis</option>
+          <option value="4">Maceta italiana</option>
+          <option value="5">Iris</option>
+          <option value="6">Tulip&aacute;n</option>
+        </select></td>
+      <td rowspan="4"><img src="figuras/catalogo/planta1.gif" width="150" height="150" border="1" alt="" name="planta" id="planta"></td>
+    </tr>
+    <tr>
+      <td>Precio:</td>
+      <td><input type="text" name="precio" value="0" size="5" maxlength="5" disabled></td>
+    </tr>
+    <tr>
+      <td>Cantidad:</td>
+      <td><input type="text" name="cantidad" value="0" size="5" maxlength="5" onMouseOver="Mensaje('Escriba la cantidad');" onmouseout="Mensaje('');" onBlur="CalcularTotal()"></td>
+    </tr>
+    <tr>
+      <td>Total:</td>
+      <td><input type="text" name="total" value="0" size="5" maxlength="5" disabled></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="button" name="consultar" value="Ver" onclick="VerProducto(catalogo.selectedIndex)" onmouseover="Mensaje('Ver descripci&oacute;n del producto')" onmouseout="Mensaje('')">
+        <input type="button" name="agregar" value="Agregar" onclick="Agregar(catalogo.selectedIndex,cantidad.value)" onmouseover="Mensaje('Agregar a la canasta de compras')" onmouseout="Mensaje('')">
+        <input type="button" name="pagar" value="Pagar" onclick="Pagar()" onmouseover="Mensaje('Pagar los productos de la canasta de compras')" onmouseout="Mensaje('')">
+        <input type="button" name="vaciar" value="Vaciar" onClick="Vaciar()" onmouseover="Mensaje('Vaciar la canasta de compras')" onmouseout="Mensaje('')"></td>
+    </tr>
+  </table>
+</form>
+<br>
+<p class="menutexto">&lt; <a href="catalogo.html" class="enlacemenu">Cat&aacute;logo</a> | <a href="compras.html" class="enlacemenu">Compras</a> | <a href="personal.html" class="enlacemenu">Personal</a> | <a href="catalogo.html#ofertas" class="enlacemenu">Ofertas</a> | <a href="personalizar.html" class="enlacemenu">Personalizar</a> | <a href="mailto:comentarios@jardines.com.mx" class="enlacemenu">Comentarios</a> &gt;</p>
+<br>
+<table class="barrainferior" border="0" cellspacing="0"
+cellpadding="0">
+  <tr>
+    <td><img src="figuras/barra.gif" width="360" height="25" border=
+"0" alt=""></td>
+  </tr>
+</table>
+</body>
+</html>

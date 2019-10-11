@@ -1,0 +1,89 @@
+<html>
+
+<head>
+	<script>
+		var misLibros = new Array();
+
+		function Libro(titulo, autor, editorial, tema) {
+			this.titulo = titulo.toUpperCase();
+			this.autor = autor;
+			this.editorial = editorial;
+			this.tema = tema.toLowerCase();
+			this.escribir = escribirLibro;
+		}
+
+		function escribirLibro() {
+			cadena = "<b>Titulo: </b> " + this.titulo + 
+			"<br><b>Autor: </b>" + this.autor +
+			"<br><b>Editorial: </b>" + this.editorial + 
+			"<br><b>Tema: </b>" + this.tema
+			+"<button onclick='window.close()'>cerrar ventana</button>";
+
+
+			ventana = window.open("", "", "width=200 height=200 status=yes");
+			ventana.document.open();
+			ventana.document.writeln(cadena);
+			ventana.document.close();
+		}
+
+		function agregarLibro(formulario) {
+			titulo = formulario.titulo;
+			autor = formulario.autor;
+			editorial = formulario.editorial;
+			tema = formulario.tema;
+
+			if (titulo.value == "") {
+				alert("Debes escribir el título");
+				titulo.focus();
+				return false;
+			}
+			if (autor.value == "") {
+				alert("Debes escribir el autor");
+				autor.focus();
+				return false;
+			}
+			if (editorial.value == "") {
+				alert("Debes escribir la editorial");
+				editorial.focus();
+				return false;
+			}
+			if (tema.value == "") {
+				alert("Debes escribir el tema");
+				tema.focus();
+				return false;
+			}
+
+			misLibros.push(new Libro(titulo.value, autor.value, editorial.value, tema.value));
+			titulo.value = "";
+			autor.value = "";
+			editorial.value = "";
+			tema.value = "";
+
+			return true;
+		}
+
+		function verLibros() {
+			misLibros.forEach(function (elemento, indice, array) {
+				elemento.escribir();
+			});
+		}
+	</script>
+</head>
+
+
+
+<body>
+	<h1>Libros</h1>
+	<form name="forma">
+		<p>T&iacute;tulo: <input type="text" name="titulo" /></p>
+		<p>Autor: <input type="text" name="autor" /></p>
+		<p>Editorial: <input type="text" name="editorial" /></p>
+		<p>Tema: <input type="text" name="tema" /></p>
+		<p>
+			<input type="button" name="boton1" value="Agregar" onclick="agregarLibro(forma)" />
+			<input type="button" name="boton2" value="Ver" onclick="verLibros()" />
+		</p>
+	</form>
+</body>
+
+</html>

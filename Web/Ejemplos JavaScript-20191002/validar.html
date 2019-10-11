@@ -1,0 +1,85 @@
+<html>
+<head>
+
+<style>
+
+.normal {
+	background-color: white;
+}
+
+.error {
+	background-color: red;
+}
+
+</style>
+
+<script>
+
+function esLetras (caja) {
+
+	if (isNaN(caja))
+		return true;
+	else
+		return false;
+}
+
+function esNumeros (caja) {
+
+	if (isNaN(caja))
+		return false;
+	else
+		return true;
+
+}
+
+
+function validar(forma) {
+
+	forma.numero.className = "normal";
+	forma.texto.className = "normal";
+
+	if (forma.numero.value == ""){
+		alert("El número no debe estar vacío");
+		forma.numero.className="error";
+		forma.numero.focus();
+		return false;
+	}
+	if (forma.texto.value == ""){
+		alert("El texto no debe estar vacío");
+		//forma.texto.style.backgroundColor="red";
+		forma.texto.className="error";
+		forma.texto.focus();
+		return false;
+	}
+
+
+	if (esLetras(forma.numero.value)) {
+		alert("El número no puede tener texto");
+		forma.numero.className="error";
+		forma.numero.focus();
+		return false;
+	}
+	if (esNumeros(forma.texto.value)) {
+		alert("El texto no puede tener números");
+		forma.texto.className="error";
+		forma.texto.focus();
+		return false;
+	}
+
+	return true;
+}
+
+
+</script>
+
+</head
+<body>
+
+<form name="forma">
+<p>N&uacute;mero: <input type="text" name="numero" onclick="this.select()"></p>
+<p>Texto: <input type="text" name="texto" onfocus="this.select()"></p>
+<p><input type="button" name="Validar" value="Validar" onclick="validar(forma)"></p>
+</form>
+
+</body>
+</html>
