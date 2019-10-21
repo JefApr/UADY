@@ -1,24 +1,27 @@
 package model;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class VoteModel extends  Model{
+
+    private static final String[] candidates={"Jef", "Trump", "AMLO"};
+
+
     private Map<String, Integer> votes;
 
     public VoteModel() {
-        votes= new HashMap<>();
-    }
-
-    public void setCandidates(String[] candidates) throws Exception {
+        votes= new HashMap();
         for(String candidate : candidates){
-            if(!votes.containsKey(candidate)){
-                votes.put(candidate,0);
-            }else{
-                throw new Exception("Nombres de candidatos repetidos: "+ candidate);
-            }
+            votes.put(candidate, 0);
         }
     }
+
+    public String[] getCandidates(){
+        return candidates;
+    }
+
 
     public void addVote(String candidate){
         Integer vote= votes.get(candidate);
@@ -33,5 +36,4 @@ public class VoteModel extends  Model{
         votes.replace(candidate, vote);
         notifyObservers(votes);
     }
-
 }

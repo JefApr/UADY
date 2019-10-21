@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pendientes</title>
+
+<link href="estilos.css" rel="stylesheet" type="text/css" />
+<style media="print">
+<!--
+.ocultar {
+	visibility:hidden;
+}
+-->
+</style>
+
+<script language="javascript" src="codigo.js"></script>
+<script language="javascript">
+<!--
+
+//Modelo original ... eventos y funciones por separado
+//document.getElementById("imprimir").onclick = imprimirVentana;
+//function imprimirVentana() { window.print() };
+
+//Modelo mejorado ... eventos y funciones integradas
+//document.getElementById("imprimir").onclick = function () { window.print() };
+
+//El problema del código anterior es que se interpreta antes que se cargue
+//la página, se debe poner al final del documento o usar un window.onload
+
+window.onload = function () {
+	
+	leerPendientes();
+	verPendientes();
+	document.getElementById("imprimir").onclick = function () { window.print() };
+	document.getElementById("agregar").onclick = function () { verVentana("agregar.html") };	
+	document.getElementById("reiniciar").onclick = function () {
+			pendientes = [];
+			pendientes[0] = ["T&iacute;tulo", "Fecha", "Descripci&oacute;n"];
+			verPendientes();
+		};
+		
+	verReloj();
+}
+
+var pendientes = new Array();
+pendientes[0] = ["T&iacute;tulo", "Fecha", "Descripci&oacute;n"];
+
+function leerPendientes() {
+	var contador = Number(readCookie("contador"));
+	for(i=0,j=contador; i<j; i++) {
+		var actividad = readCookie("act_" + i);
+		var actividades = actividad.split('|');
+		pendientes.push([actividades[0], actividades[1], actividades[2]])
+	}
+}
+
+function verPendientes(){
+	var i,j;
+	var cadena;
+	
+	cadena="<table border>";
+	for(i=0,j=pendientes.length; i<j; i++) {
+		cadena += "<tr>";
+		cadena += "<td>" + pendientes[i][0] + "</td>";
+		cadena += "<td>" + pendientes[i][1] + "</td>";
+		cadena += "<td>" + pendientes[i][2] + "</td>";
+		cadena += "</tr>";
+	}
+	cadena += "</table>";
+	document.getElementById("pendientes").innerHTML = cadena;	
+}
+
+function verVentana(url) {
+	var ventana = window.open(url, "ventana", "width=500, height=400");
+	ventana.focus();
+}
+
+function verReloj() {
+	
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+
+	document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
+	t=setTimeout('verReloj()',500);
+	
+	// clearTimeout(t);
+}
+
+//-->
+</script>
+
+</head>
+
+<body>
+<h1 class="titulo">Lista de pendientes.</h1>
+<div id="pendientes">
+  <p>&nbsp;</p>
+</div>
+<p class="ocultar"><a href="#" id="imprimir" ><img src="imagenes/impresora.gif" width="48" height="48" border="0" align="absmiddle" title="Imprimir ventana" /></a>
+  <input type="button" name="agregar" id="agregar" value="Agregar" />
+  <input type="button" name="reiniciar" id="reiniciar" value="Reiniciar" />
+</p>
+<div id="reloj"></div>
+</body>
+
+</html>

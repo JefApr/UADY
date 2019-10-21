@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+	<h2>¿Qué hora es?</h2>
+	<input type="text" id="name">
+	<button type="button" onclick="loadDoc()">Request data</button>
+	<p id="message"></p>
+</body>
+<script>
+		function loadDoc() {
+			var name = document.getElementById("name");
+			var d = new Date();
+			var hour = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+			var xhttp;
+			if (window.XMLHttpRequest) {
+				// code for modern browsers
+				xhttp = new XMLHttpRequest();
+			} else {
+				// code for old IE browsers
+				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("message").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("POST", "archivo.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("fname=" + name.value + "&hour=" + hour);
+		}
+	</script>
+</html>

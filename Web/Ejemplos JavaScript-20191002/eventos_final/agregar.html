@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Agregar actividad</title>
+
+<link href="estilos.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" src="codigo.js"></script>
+<script language="javascript">
+<!--
+
+window.onload = function () {
+	document.getElementById("cerrar").onclick = function () { window.close() }
+	document.formulario.agregar.onclick = function () {
+			if(document.formulario.titulo.value == "") {
+				alert("Debe proporcionar el título");
+				document.formulario.titulo.focus();
+				return false;
+			}
+
+			if(!esFecha(document.formulario.fecha.value)) {
+				alert("Debe proporcionar una fecha válida");
+				document.formulario.fecha.focus();
+				return false;
+			}
+			
+			for(i=0, j=document.formulario.duracion.length; i<j; i++) {
+				if(document.formulario.duracion[i].checked) break;
+			}
+			if(i==j) {
+				alert("Debe seleccionar una duración");
+				document.formulario.duracion[0].focus();
+				return false;
+			}
+
+			agregarActividad(document.formulario.titulo.value, document.formulario.fecha.value, document.formulario.descripcion.value);
+			
+			var contador = Number(readCookie("contador"));
+			createCookie("act_" + contador,
+					document.formulario.titulo.value + "|" +
+					document.formulario.fecha.value + "|" +
+					document.formulario.descripcion.value
+					);
+			createCookie("contador", contador+1);
+
+		}
+}
+
+function agregarActividad(titulo, fecha, descripcion ){
+	window.opener.pendientes.push([titulo, fecha, descripcion]);
+	window.opener.verPendientes();
+}
+
+//-->
+</script>
+</head>
+
+<body">
+<h1 class="titulo">Agregar actividad.</h1>
+<form id="formulario" name="formulario" method="post" action="">
+  <table>
+    <tr>
+      <td>T&iacute;tulo:</td>
+      <td><input type="text" name="titulo" id="titulo" /></td>
+    </tr>
+    <tr>
+      <td>Fecha:</td>
+      <td><input type="text" name="fecha" id="fecha" /> (dd-mm-aaaa)</td>
+    </tr>
+    <tr>
+      <td>Descripci&oacute;n</td>
+      <td><textarea name="descripcion" id="descripcion" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <td>Duraci&oacute;n:</td>
+      <td><p>
+        <input type="radio" name="duracion" id="radio" value="15" />15 minutos<br />
+		<input type="radio" name="duracion" id="radio2" value="30" />30 minutos<br />
+		<input type="radio" name="duracion" id="radio3" value="1" />1 hora<br />
+        <input type="radio" name="duracion" id="radio4" value="-1" />M&aacute;s de 1 hora</p></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" name="agregar" id="agregar" value="Agregar" />
+      <input type="button" name="cerrar" id="cerrar" value="Cerrar" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="votosproject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/votosproject_jar</output-path>
+    <root id="archive" name="votosproject.jar">
+      <element id="module-output" name="votosproject" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jfree/jcommon/1.0.23/jcommon-1.0.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

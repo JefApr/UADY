@@ -1,0 +1,58 @@
+<html>
+<head>
+<script>
+
+// Headers: X-Frame-Options: DENY
+// Headers: Access-Control-Allow-Origin: *
+// https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS
+
+function ejecutarPeticion() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("contenedor").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax.php?url=https://intranet.matematicas.uady.mx/enlinea2/", true);
+  xhttp.send(); 
+}
+
+window.onload =  function () {
+
+	document.getElementById("boton").onclick = ejecutarPeticion;
+	
+}
+
+</script>
+
+<style>
+
+#contenedor {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+</style>
+
+</head>
+<body>
+<div id="contenedor">
+This is a div element.
+</div>
+<input type="button" id="boton" value="cargar">
+
+<p>Una capa</p>
+
+<div style="width:500px; height:500px; border: 1px solid black">
+    <object type="text/html" data="http://www.uady.mx" style="width:500px; height:500px"></object>
+</div>
+
+<p>Un frame</p>
+ <iframe src="http://www.uady.mx" width="500" height="500" frameborder="no" scrolling="yes" style="border: 1px solid black">
+ </iframe>
+
+
+</body>
+</html>
