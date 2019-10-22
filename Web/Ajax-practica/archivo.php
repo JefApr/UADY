@@ -1,3 +1,3 @@
 <?php
-echo 'Hola '. $_POST['fname'] .', son las ' . $_POST['hour'];
+echo 'Hola '. $_POST['name'] .', son las ' . $_POST['hour'];
   ?>

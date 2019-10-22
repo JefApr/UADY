@@ -2,38 +2,55 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<title>Document</title>
 </head>
 
 <body>
-
 	<h2>¿Qué hora es?</h2>
 	<input type="text" id="name">
-	<button type="button" onclick="loadDoc()">Request data</button>
+	<button type="button" onclick="loadDoc()">Preguntar</button>
 	<p id="message"></p>
 </body>
+
 <script>
-		function loadDoc() {
-			var name = document.getElementById("name");
-			var d = new Date();
-			var hour = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-			var xhttp;
-			if (window.XMLHttpRequest) {
-				// code for modern browsers
-				xhttp = new XMLHttpRequest();
-			} else {
-				// code for old IE browsers
-				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xhttp.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("message").innerHTML = this.responseText;
-				}
-			};
-			xhttp.open("POST", "archivo.php", true);
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("fname=" + name.value + "&hour=" + hour);
+	function loadDoc() {
+		var name = document.getElementById("name");
+		var d = new Date();
+		var hour = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+		ajax("POST", "archivo.php", "name", name.value, "hour", hour);
 		}
-	</script>
+
+	function printMessage(value){
+		document.getElementById("message").innerHTML = value;
+	}
+
+	function ajax(metodo, url, ...variables){
+		var xhttp;
+		if (window.XMLHttpRequest) {
+			// code for modern browsers
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for old IE browsers
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhttp.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				printMessage(this.responseText);
+			}
+		};
+		xhttp.open(metodo, url, true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		var values="";
+		for(let i=0; i<variables.length; i++){
+			values==""?values=variables[i]+"=":values+="&"+variables[i]+"=";
+			i++;
+			values+=variables[i]; 
+		}
+
+		xhttp.send(values);
+	}
+</script>
+
 </html>
